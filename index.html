@@ -4,9 +4,47 @@
   <meta charset="UTF-8">
   <title>세특 조회</title>
   <style>
-    body { font-family: Arial, sans-serif; padding: 20px; }
-    input { margin: 5px; }
-    #result { margin-top: 20px; padding: 10px; border: 1px solid #ccc; width: 90%; max-width: 600px; }
+    body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+  }
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+  }
+  input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    margin-top: 5px;
+    box-sizing: border-box;
+  }
+  button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+  }
+  #result {
+    margin-top: 30px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    word-break: break-word;
+    background-color: #f9f9f9;
+  }
+
+  @media (max-width: 480px) {
+    body {
+      padding: 10px;
+    }
+    button {
+      width: 100%;
+    }
+  }
   </style>
 </head>
 <body>
