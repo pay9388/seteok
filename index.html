@@ -120,17 +120,21 @@
       const pw = document.getElementById("studentPw").value.trim();
       const resultDiv = document.getElementById("result");
 
-      const student = data.find(s => s.학번 === id && s.이름 === name);
+      const studentByIdAndName = data.find(s => s.학번 === id && s.이름 === name);
 
-      if (!student) {
-        resultDiv.innerHTML = `<span style='color:red;'>일치하는 학생 정보를 찾을 수 없습니다.</span>`;
-      } else if (student.비밀번호 !== pw) {
-        resultDiv.innerHTML = `<span style='color:red;'>비밀번호가 틀렸습니다.</span>`;
-      } else {
-        resultDiv.innerHTML = `<b>[${student.학번}] ${student.이름}</b><br><br><b>세특 내용:</b><br>${student.세특}`;
+      if (!studentByIdAndName) {
+        resultDiv.innerHTML = "<span style='color:red;'>일치하는 학생 정보를 찾을 수 없습니다.</span>";
+        return;
       }
+
+      if (studentByIdAndName.비밀번호 !== pw) {
+        resultDiv.innerHTML = "<span style='color:red;'>비밀번호가 틀렸습니다.</span>";
+        return;
+      }
+
+      resultDiv.innerHTML = `<b>[${studentByIdAndName.학번}] ${studentByIdAndName.이름}</b><br><br><b>세특 내용:</b><br>${studentByIdAndName.세특}`;
     }
-    }
-  </script>
+
+</script>
 </body>
 </html>
